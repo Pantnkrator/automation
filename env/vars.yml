@@ -36,8 +36,7 @@ cms_worker_services_per_host_options:
     memory_node: 0 # Worker locked to first NUMA node (CPU socket)
 
 cms_worker_host_slots: [
- 34.169.155.34,
- 34.105.60.27
+ 192.168.104.98
 ]
 
 

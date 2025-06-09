@@ -35,7 +35,7 @@
   hosts: localhost
   tasks:
     - name: Loop through all inventory hosts and remove known_hosts entries
-      ansible.builtin.shell: ssh-keygen -f "/home/sam/.ssh/known_hosts" -R "{{ item }}"
+      ansible.builtin.shell: ssh-keygen -f "/home/administrador/.ssh/known_hosts" -R "{{ item }}"
       with_items: "{{ groups['all'] }}"
 
 - name: Create CMS user, grant sudo privileges, copy SSH key, and add PostgreSQL repo
@@ -72,7 +72,7 @@
 
     - name: Copy public SSH key to authorized_keys
       ansible.builtin.copy:
-        src: /home/sam/.ssh/id_rsa.pub
+        src: /home/administrador/.ssh/id_rsa.pub
         dest: /home/cms/.ssh/authorized_keys
         owner: cms
         group: cms
